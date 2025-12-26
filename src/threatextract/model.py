@@ -39,7 +39,7 @@ class ThreatExtractNER:
 
     Example:
         >>> from src.threatextract import ThreatExtractNER
-        >>> ner = ThreatExtractNER.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+        >>> ner = ThreatExtractNER.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
         >>> results = ner.predict("The malware connected to 192.168.1.1")
         >>> print(results)
     """
@@ -105,7 +105,7 @@ class ThreatExtractNER:
             Initialized ThreatExtractNER instance
 
         Example:
-            >>> ner = ThreatExtractNER.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+            >>> ner = ThreatExtractNER.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
         """
         logger.info(f"Loading model from: {model_name_or_path}")
 

@@ -116,7 +116,7 @@ class IOCExtractionPipeline:
     - Multiple output formats
 
     Example:
-        >>> pipeline = IOCExtractionPipeline.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+        >>> pipeline = IOCExtractionPipeline.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
         >>> results = pipeline.extract(
         ...     "The malware at 192.168.1.1 exploited CVE-2023-1234"
         ... )

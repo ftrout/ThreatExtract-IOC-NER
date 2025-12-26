@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-orange)](https://huggingface.co/ftrout/ThreatExtract-IOC-NER)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-orange)](https://huggingface.co/fmt0816/ThreatExtract-IOC-NER)
 
 A production-ready Named Entity Recognition (NER) model for extracting **Indicators of Compromise (IOCs)** from cybersecurity threat intelligence text.
 
@@ -26,7 +26,7 @@ ThreatExtract-IOC-NER is a fine-tuned transformer model that automatically ident
 
 ```bash
 # Clone the repository
-git clone https://github.com/ftrout/ThreatExtract-IOC-NER.git
+git clone https://github.com/fmt0816/ThreatExtract-IOC-NER.git
 cd ThreatExtract-IOC-NER
 
 # Install dependencies
@@ -42,7 +42,7 @@ pip install -e .
 from src.threatextract import IOCExtractionPipeline
 
 # Load the model
-pipeline = IOCExtractionPipeline.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+pipeline = IOCExtractionPipeline.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
 
 # Extract IOCs
 text = """
@@ -71,7 +71,7 @@ MD5: d41d8cd98f00b204e9800998ecf8427e (confidence: 95.40%)
 ```python
 from transformers import pipeline
 
-ner = pipeline("ner", model="ftrout/ThreatExtract-IOC-NER", aggregation_strategy="simple")
+ner = pipeline("ner", model="fmt0816/ThreatExtract-IOC-NER", aggregation_strategy="simple")
 results = ner("The malware TrickBot connected to evil-domain.com")
 ```
 
@@ -165,6 +165,9 @@ python scripts/evaluate.py \
 
 ```
 ThreatExtract-IOC-NER/
+├── .github/
+│   ├── ISSUE_TEMPLATE/        # Issue templates
+│   └── pull_request_template.md
 ├── src/
 │   ├── __init__.py
 │   └── threatextract/
@@ -176,7 +179,8 @@ ThreatExtract-IOC-NER/
 ├── scripts/
 │   ├── train.py               # Training script
 │   ├── evaluate.py            # Evaluation script
-│   └── generate_sample_data.py # Synthetic data generation
+│   ├── generate_sample_data.py # Synthetic data generation
+│   └── push_to_hub.py         # Hugging Face Hub upload
 ├── configs/
 │   └── training_config.yaml   # Training configuration
 ├── data/
@@ -187,6 +191,9 @@ ThreatExtract-IOC-NER/
 │   └── test_data.py
 ├── app.py                     # Gradio demo
 ├── MODEL_CARD.md              # Hugging Face model card
+├── DATASET_CARD.md            # Dataset documentation
+├── SECURITY.md                # Security policy
+├── CONTRIBUTING.md            # Contribution guidelines
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
@@ -200,7 +207,7 @@ ThreatExtract-IOC-NER/
 from src.threatextract import IOCExtractionPipeline
 
 pipeline = IOCExtractionPipeline.from_pretrained(
-    "ftrout/ThreatExtract-IOC-NER",
+    "fmt0816/ThreatExtract-IOC-NER",
     validate_iocs=True,      # Enable regex validation
     min_confidence=0.7,       # Higher confidence threshold
     deduplicate=True,         # Remove duplicates
@@ -278,7 +285,7 @@ from src.threatextract import ThreatExtractNER
 
 model = ThreatExtractNER.from_pretrained("./output/threatextract-ioc-ner/final_model")
 model.save_pretrained(
-    "ftrout/ThreatExtract-IOC-NER",
+    "fmt0816/ThreatExtract-IOC-NER",
     push_to_hub=True,
 )
 ```
@@ -288,18 +295,22 @@ model.save_pretrained(
 ```python
 from src.threatextract import ThreatExtractNER
 
-model = ThreatExtractNER.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+model = ThreatExtractNER.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
 ```
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 🔒 Security
+
+For security concerns, please see our [Security Policy](SECURITY.md).
 
 ## 📄 License
 
@@ -317,9 +328,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 @misc{threatextract-ioc-ner,
   title={ThreatExtract-IOC-NER: Named Entity Recognition for Threat Intelligence},
   author={ThreatExtract Team},
-  year={2024},
+  year={2025},
   publisher={GitHub},
-  url={https://github.com/ftrout/ThreatExtract-IOC-NER}
+  url={https://github.com/fmt0816/ThreatExtract-IOC-NER}
 }
 ```
 

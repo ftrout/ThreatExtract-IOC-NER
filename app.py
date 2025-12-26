@@ -382,7 +382,7 @@ def main():
         default_paths = [
             "./output/threatextract-ioc-ner/final_model",
             "./output/threatextract-ioc-ner",
-            "ftrout/ThreatExtract-IOC-NER",
+            "fmt0816/ThreatExtract-IOC-NER",
         ]
         for path in default_paths:
             if Path(path).exists() or not path.startswith("."):
