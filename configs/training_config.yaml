@@ -1,0 +1,155 @@
+# ThreatExtract-IOC-NER Training Configuration
+# =============================================
+# This configuration file defines all parameters for fine-tuning
+# the IOC extraction NER model.
+
+# Model Configuration
+model:
+  # Base model to fine-tune (HuggingFace model ID)
+  # Recommended options:
+  # - microsoft/deberta-v3-base (default, best balance)
+  # - microsoft/deberta-v3-large (higher accuracy, more resources)
+  # - bert-base-cased (classic, widely supported)
+  # - roberta-base (good for domain adaptation)
+  # - distilbert-base-cased (faster, smaller)
+  # - jackaduma/SecBERT (pre-trained on security text)
+  base_model: "microsoft/deberta-v3-base"
+
+  # Maximum sequence length (tokens)
+  max_length: 512
+
+  # Whether to label all subword tokens or just first
+  label_all_tokens: false
+
+# Data Configuration
+data:
+  # Path to training data (JSON or CoNLL format)
+  train_file: "data/processed/train.json"
+
+  # Path to validation data (optional, will split from train if not provided)
+  validation_file: "data/processed/val.json"
+
+  # Path to test data (optional)
+  test_file: "data/processed/test.json"
+
+  # Validation split ratio (used if validation_file not provided)
+  validation_split: 0.1
+
+  # Data format: 'json', 'conll', or 'auto'
+  format: "auto"
+
+# Training Hyperparameters
+training:
+  # Output directory for checkpoints and final model
+  output_dir: "./output/threatextract-ioc-ner"
+
+  # Number of training epochs
+  num_train_epochs: 10
+
+  # Batch size per device
+  per_device_train_batch_size: 16
+  per_device_eval_batch_size: 32
+
+  # Gradient accumulation steps (effective batch = batch_size * accumulation)
+  gradient_accumulation_steps: 2
+
+  # Learning rate
+  learning_rate: 2.0e-5
+
+  # Weight decay for regularization
+  weight_decay: 0.01
+
+  # Warmup ratio (fraction of total steps for warmup)
+  warmup_ratio: 0.1
+
+  # Learning rate scheduler type
+  lr_scheduler_type: "cosine"
+
+  # Optimizer
+  optim: "adamw_torch"
+
+  # Maximum gradient norm for clipping
+  max_grad_norm: 1.0
+
+  # Seed for reproducibility
+  seed: 42
+
+# Evaluation Configuration
+evaluation:
+  # Evaluation strategy: 'steps', 'epoch', or 'no'
+  strategy: "epoch"
+
+  # Evaluate every N steps (if strategy is 'steps')
+  eval_steps: 500
+
+  # Metric for best model selection
+  metric_for_best_model: "eval_f1"
+
+  # Whether higher metric is better
+  greater_is_better: true
+
+  # Load best model at end of training
+  load_best_model_at_end: true
+
+# Saving Configuration
+saving:
+  # Save strategy: 'steps', 'epoch', or 'no'
+  strategy: "epoch"
+
+  # Save every N steps (if strategy is 'steps')
+  save_steps: 500
+
+  # Maximum number of checkpoints to keep
+  save_total_limit: 3
+
+# Logging Configuration
+logging:
+  # Logging directory
+  logging_dir: "./output/logs"
+
+  # Log every N steps
+  logging_steps: 100
+
+  # Report metrics to: 'tensorboard', 'wandb', 'none'
+  report_to: "tensorboard"
+
+  # Run name for tracking
+  run_name: "threatextract-ioc-ner"
+
+# Hardware Configuration
+hardware:
+  # Use mixed precision training: 'fp16', 'bf16', or 'no'
+  # Use 'bf16' for newer GPUs (A100, H100), 'fp16' for older
+  fp16: true
+  bf16: false
+
+  # Use gradient checkpointing to save memory
+  gradient_checkpointing: false
+
+  # DataLoader workers
+  dataloader_num_workers: 4
+
+# Early Stopping
+early_stopping:
+  # Enable early stopping
+  enabled: true
+
+  # Patience (epochs without improvement)
+  patience: 3
+
+  # Minimum improvement threshold
+  threshold: 0.001
+
+# Push to Hub Configuration
+hub:
+  # Whether to push to HuggingFace Hub
+  push_to_hub: false
+
+  # Hub model ID (e.g., "username/ThreatExtract-IOC-NER")
+  hub_model_id: null
+
+  # Hub token (or set HF_TOKEN environment variable)
+  hub_token: null
+
+  # Make model private
+  private: false
