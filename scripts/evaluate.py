@@ -7,7 +7,7 @@ computing precision, recall, F1-score, and other metrics.
 
 Usage:
     python scripts/evaluate.py --model_path ./output/threatextract-ioc-ner/final_model
-    python scripts/evaluate.py --model_path ftrout/ThreatExtract-IOC-NER --test_file data/test.json
+    python scripts/evaluate.py --model_path fmt0816/ThreatExtract-IOC-NER --test_file data/test.json
 """
 
 import argparse

@@ -105,7 +105,7 @@ def main():
     parser.add_argument(
         "--hub_id",
         type=str,
-        default="ftrout/ThreatExtract-IOC-NER",
+        default="fmt0816/ThreatExtract-IOC-NER",
         help="Hugging Face Hub model ID",
     )
     parser.add_argument(

@@ -74,7 +74,7 @@ ThreatExtract-IOC-NER is a transformer-based token classification model trained 
 from transformers import pipeline
 
 # Load the model
-ner = pipeline("ner", model="ftrout/ThreatExtract-IOC-NER", aggregation_strategy="simple")
+ner = pipeline("ner", model="fmt0816/ThreatExtract-IOC-NER", aggregation_strategy="simple")
 
 # Extract IOCs
 text = "APT29 exploited CVE-2021-44228 to deploy Cobalt Strike, connecting to 185.220.101.1"
@@ -90,7 +90,7 @@ for entity in results:
 from src.threatextract import IOCExtractionPipeline
 
 # Load the pipeline
-pipeline = IOCExtractionPipeline.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+pipeline = IOCExtractionPipeline.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
 
 # Extract IOCs with validation
 iocs = pipeline.extract(
@@ -109,8 +109,8 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification
 import torch
 
 # Load model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("ftrout/ThreatExtract-IOC-NER")
-model = AutoModelForTokenClassification.from_pretrained("ftrout/ThreatExtract-IOC-NER")
+tokenizer = AutoTokenizer.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
+model = AutoModelForTokenClassification.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
 
 # Tokenize input
 text = "The malware Emotet connected to evil-domain.com"
@@ -201,7 +201,7 @@ This model is intended for **defensive security purposes only**:
   author={ThreatExtract Team},
   year={2025},
   publisher={Hugging Face},
-  url={https://huggingface.co/ftrout/ThreatExtract-IOC-NER}
+  url={https://huggingface.co/fmt0816/ThreatExtract-IOC-NER}
 }
 ```
 

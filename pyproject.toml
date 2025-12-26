@@ -74,10 +74,10 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ftrout/ThreatExtract-IOC-NER"
-Documentation = "https://github.com/ftrout/ThreatExtract-IOC-NER#readme"
-Repository = "https://github.com/ftrout/ThreatExtract-IOC-NER.git"
-Issues = "https://github.com/ftrout/ThreatExtract-IOC-NER/issues"
+Homepage = "https://github.com/fmt0816/ThreatExtract-IOC-NER"
+Documentation = "https://github.com/fmt0816/ThreatExtract-IOC-NER#readme"
+Repository = "https://github.com/fmt0816/ThreatExtract-IOC-NER.git"
+Issues = "https://github.com/fmt0816/ThreatExtract-IOC-NER/issues"
 
 [project.scripts]
 threatextract-train = "scripts.train:main"

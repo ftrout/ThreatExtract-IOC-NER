@@ -132,7 +132,7 @@ This dataset is released under the MIT License.
   author={ThreatExtract Team},
   year={2025},
   publisher={GitHub},
-  url={https://github.com/ftrout/ThreatExtract-IOC-NER}
+  url={https://github.com/fmt0816/ThreatExtract-IOC-NER}
 }
 ```
 
