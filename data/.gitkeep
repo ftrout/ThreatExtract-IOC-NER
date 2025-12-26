@@ -1,0 +1,6 @@
+# This directory contains training data
+# - raw/: Raw data files
+# - processed/: Processed training data (train.json, val.json, test.json)
+
+# Generate sample data:
+# python scripts/generate_sample_data.py --output data/processed --num_examples 1000

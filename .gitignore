@@ -191,6 +191,36 @@ cython_debug/
 # Ruff stuff:
 .ruff_cache/
 
+# ThreatExtract-IOC-NER specific
+# ==============================
+
+# Model outputs
+output/
+checkpoints/
+runs/
+wandb/
+
+# Training data (generated)
+data/processed/
+data/raw/*.json
+data/raw/*.conll
+
+# Evaluation results
+results.json
+eval_output/
+
+# Hugging Face cache
+.cache/huggingface/
+
+# Model files (large binaries)
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Keep model card template
+!MODEL_CARD.md
+
 # PyPI configuration file
 .pypirc
 

@@ -165,6 +165,9 @@ python scripts/evaluate.py \
 
 ```
 ThreatExtract-IOC-NER/
+├── .github/
+│   ├── ISSUE_TEMPLATE/        # Issue templates
+│   └── pull_request_template.md
 ├── src/
 │   ├── __init__.py
 │   └── threatextract/
@@ -176,7 +179,8 @@ ThreatExtract-IOC-NER/
 ├── scripts/
 │   ├── train.py               # Training script
 │   ├── evaluate.py            # Evaluation script
-│   └── generate_sample_data.py # Synthetic data generation
+│   ├── generate_sample_data.py # Synthetic data generation
+│   └── push_to_hub.py         # Hugging Face Hub upload
 ├── configs/
 │   └── training_config.yaml   # Training configuration
 ├── data/
@@ -187,6 +191,9 @@ ThreatExtract-IOC-NER/
 │   └── test_data.py
 ├── app.py                     # Gradio demo
 ├── MODEL_CARD.md              # Hugging Face model card
+├── DATASET_CARD.md            # Dataset documentation
+├── SECURITY.md                # Security policy
+├── CONTRIBUTING.md            # Contribution guidelines
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
@@ -293,13 +300,17 @@ model = ThreatExtractNER.from_pretrained("ftrout/ThreatExtract-IOC-NER")
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 🔒 Security
+
+For security concerns, please see our [Security Policy](SECURITY.md).
 
 ## 📄 License
 
@@ -317,7 +328,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 @misc{threatextract-ioc-ner,
   title={ThreatExtract-IOC-NER: Named Entity Recognition for Threat Intelligence},
   author={ThreatExtract Team},
-  year={2024},
+  year={2025},
   publisher={GitHub},
   url={https://github.com/ftrout/ThreatExtract-IOC-NER}
 }
