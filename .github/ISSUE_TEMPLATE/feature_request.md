@@ -20,8 +20,3 @@ Describe any alternative solutions or features you've considered.
 
 ## Additional Context
 Add any other context, screenshots, or examples here.
-
-## Would you be willing to contribute this feature?
-- [ ] Yes, I'd like to work on this
-- [ ] I could help with testing
-- [ ] No, just suggesting

@@ -198,7 +198,7 @@ This model is intended for **defensive security purposes only**:
 ```bibtex
 @misc{threatextract-ioc-ner,
   title={ThreatExtract-IOC-NER: Named Entity Recognition for Threat Intelligence},
-  author={ThreatExtract Team},
+  author={ftrout},
   year={2025},
   publisher={Hugging Face},
   url={https://huggingface.co/fmt0816/ThreatExtract-IOC-NER}
@@ -208,9 +208,3 @@ This model is intended for **defensive security purposes only**:
 ## License
 
 This model is released under the MIT License.
-
-## Acknowledgments
-
-- Built with [Hugging Face Transformers](https://huggingface.co/transformers)
-- Inspired by the cybersecurity community's need for automated IOC extraction
-- Thanks to the open-source security research community

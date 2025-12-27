@@ -120,7 +120,7 @@ For production use:
 
 ### Dataset Curator
 
-ThreatExtract Team
+ftrout
 
 ### Licensing Information
 
@@ -131,9 +131,9 @@ This dataset is released under the MIT License.
 ```bibtex
 @dataset{threatextract-ioc-dataset,
   title={ThreatExtract IOC NER Training Dataset},
-  author={ThreatExtract Team},
+  author={ftrout},
   year={2025},
   publisher={GitHub},
-  url={https://github.com/fmt0816/ThreatExtract-IOC-NER}
+  url={https://github.com/ftrout/ThreatExtract-IOC-NER}
 }
 ```
