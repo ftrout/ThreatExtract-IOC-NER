@@ -1,7 +1,7 @@
 # Development container for ThreatExtract-IOC-NER
 # Includes GPU support and development tools
 
-FROM nvidia/cuda:12.1-cudnn8-devel-ubuntu22.04
+FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
 
 # Prevent interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
@@ -49,7 +49,7 @@ RUN python -m pip install --upgrade pip setuptools wheel
 COPY requirements.txt .
 
 # Install PyTorch with CUDA support, then other dependencies
-RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
+RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 \
     && pip install -r requirements.txt
 
 # Install development tools
