@@ -68,7 +68,8 @@ RUN mkdir -p /workspace/data /workspace/output \
 # Switch to non-root user
 USER $USERNAME
 
-# Set default shell to bash
-ENV SHELL=/bin/bash
+# Set default shell and add local bin to PATH
+ENV SHELL=/bin/bash \
+    PATH="/home/vscode/.local/bin:${PATH}"
 
 CMD ["bash"]
