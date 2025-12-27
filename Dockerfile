@@ -1,7 +1,7 @@
 # ThreatExtract-IOC-NER Training Dockerfile
 # GPU-enabled container for training the IOC NER model
 
-FROM nvidia/cuda:12.1-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
 
 # Prevent interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
@@ -33,7 +33,7 @@ RUN python -m pip install --upgrade pip setuptools wheel
 COPY requirements.txt .
 
 # Install PyTorch with CUDA support, then other dependencies
-RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
+RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 \
     && pip install -r requirements.txt
 
 # Copy the rest of the application
