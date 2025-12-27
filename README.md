@@ -97,8 +97,8 @@ Access at `http://localhost:7860`
 ### Generate Training Data
 
 ```bash
-# Generate synthetic training data
-python scripts/generate_sample_data.py --output data/processed --num_examples 1000
+# Generate synthetic training data (recommended: 10,000+ examples)
+python scripts/generate_sample_data.py --output data/processed --num_examples 10000
 ```
 
 ### Train the Model
@@ -193,7 +193,7 @@ ThreatExtract-IOC-NER/
 ├── MODEL_CARD.md              # Hugging Face model card
 ├── DATASET_CARD.md            # Dataset documentation
 ├── SECURITY.md                # Security policy
-├── CONTRIBUTING.md            # Contribution guidelines
+├── Dockerfile                 # GPU training container
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
@@ -297,16 +297,6 @@ from src.threatextract import ThreatExtractNER
 
 model = ThreatExtractNER.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 🔒 Security
 
