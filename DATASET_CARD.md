@@ -58,11 +58,13 @@ The dataset uses JSON format with the following structure:
 
 ### Data Splits
 
+Default configuration generates 10,000 examples with 80/10/10 split:
+
 | Split | Examples | Description |
 |-------|----------|-------------|
-| train | 800 | Training set |
-| validation | 100 | Validation set for hyperparameter tuning |
-| test | 100 | Held-out test set for final evaluation |
+| train | 8,000 | Training set |
+| validation | 1,000 | Validation set for hyperparameter tuning |
+| test | 1,000 | Held-out test set for final evaluation |
 
 ## Dataset Creation
 
@@ -135,10 +137,3 @@ This dataset is released under the MIT License.
   url={https://github.com/fmt0816/ThreatExtract-IOC-NER}
 }
 ```
-
-### Contributions
-
-We welcome contributions of additional training examples, especially:
-- Real-world labeled threat intelligence text (with appropriate permissions)
-- New entity types and validation patterns
-- Multi-language support
