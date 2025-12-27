@@ -66,10 +66,6 @@ We kindly ask security researchers to:
 - Not access, modify, or delete data belonging to others
 - Act in good faith to avoid privacy violations and service disruption
 
-## Acknowledgments
-
-We appreciate the security research community's efforts in helping keep ThreatExtract-IOC-NER secure. Researchers who responsibly disclose vulnerabilities will be acknowledged (with their permission) in our release notes.
-
 ## Scope
 
 This security policy applies to:

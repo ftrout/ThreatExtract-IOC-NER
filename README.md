@@ -26,7 +26,7 @@ ThreatExtract-IOC-NER is a fine-tuned transformer model that automatically ident
 
 ```bash
 # Clone the repository
-git clone https://github.com/fmt0816/ThreatExtract-IOC-NER.git
+git clone https://github.com/ftrout/ThreatExtract-IOC-NER.git
 cd ThreatExtract-IOC-NER
 
 # Install dependencies
@@ -166,8 +166,7 @@ python scripts/evaluate.py \
 ```
 ThreatExtract-IOC-NER/
 ├── .github/
-│   ├── ISSUE_TEMPLATE/        # Issue templates
-│   └── pull_request_template.md
+│   └── ISSUE_TEMPLATE/        # Issue templates
 ├── src/
 │   ├── __init__.py
 │   └── threatextract/
@@ -190,10 +189,12 @@ ThreatExtract-IOC-NER/
 │   ├── test_labels.py
 │   └── test_data.py
 ├── app.py                     # Gradio demo
-├── MODEL_CARD.md              # Hugging Face model card
+├── CODE_OF_CONDUCT.md         # Code of conduct
 ├── DATASET_CARD.md            # Dataset documentation
-├── SECURITY.md                # Security policy
 ├── Dockerfile                 # GPU training container
+├── FAQ.md                     # Frequently asked questions
+├── MODEL_CARD.md              # Hugging Face model card
+├── SECURITY.md                # Security policy
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
@@ -302,25 +303,27 @@ model = ThreatExtractNER.from_pretrained("fmt0816/ThreatExtract-IOC-NER")
 
 For security concerns, please see our [Security Policy](SECURITY.md).
 
+## ❓ FAQ
+
+Have questions? Check out the [Frequently Asked Questions](FAQ.md).
+
+## 📜 Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before interacting with this project.
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Hugging Face Transformers](https://huggingface.co/transformers)
-- [seqeval](https://github.com/chakki-works/seqeval) for NER evaluation
-- The cybersecurity community for threat intelligence research
 
 ## 📚 Citation
 
 ```bibtex
 @misc{threatextract-ioc-ner,
   title={ThreatExtract-IOC-NER: Named Entity Recognition for Threat Intelligence},
-  author={ThreatExtract Team},
+  author={ftrout},
   year={2025},
   publisher={GitHub},
-  url={https://github.com/fmt0816/ThreatExtract-IOC-NER}
+  url={https://github.com/ftrout/ThreatExtract-IOC-NER}
 }
 ```
 
