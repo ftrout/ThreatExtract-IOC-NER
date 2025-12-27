@@ -411,6 +411,7 @@ def main():
         config["training"]["learning_rate"] = args.learning_rate
     if args.output_dir:
         config["training"]["output_dir"] = args.output_dir
+        config["logging"]["logging_dir"] = str(Path(args.output_dir) / "logs")
     if args.train_file:
         config["data"]["train_file"] = args.train_file
     if args.push_to_hub:
