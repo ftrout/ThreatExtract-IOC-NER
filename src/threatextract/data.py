@@ -198,6 +198,9 @@ class IOCDataProcessor:
             previous_word_idx = None
             label_ids = []
 
+            # Check if labels are already integers (IDs) or strings
+            labels_are_ids = isinstance(label_list[0], int) if label_list else False
+
             for word_idx in word_ids:
                 if word_idx is None:
                     # Special tokens get -100
@@ -205,17 +208,27 @@ class IOCDataProcessor:
                 elif word_idx != previous_word_idx:
                     # First token of a word
                     label = label_list[word_idx]
-                    label_id = LABEL2ID.get(label, LABEL2ID["O"])
-                    label_ids.append(label_id)
+                    if labels_are_ids:
+                        label_ids.append(label)
+                    else:
+                        label_id = LABEL2ID.get(label, LABEL2ID["O"])
+                        label_ids.append(label_id)
                 else:
                     # Continuation of a word (subword)
                     if self.label_all_tokens:
                         label = label_list[word_idx]
-                        # Convert B- to I- for continuation
-                        if label.startswith("B-"):
-                            label = "I-" + label[2:]
-                        label_id = LABEL2ID.get(label, LABEL2ID["O"])
-                        label_ids.append(label_id)
+                        if labels_are_ids:
+                            # For IDs, we need to convert B- to I- equivalent
+                            # B-X is at odd indices, I-X is at even indices after O
+                            if label > 0 and label % 2 == 1:  # B- label
+                                label = label + 1  # Convert to I- label
+                            label_ids.append(label)
+                        else:
+                            # Convert B- to I- for continuation
+                            if label.startswith("B-"):
+                                label = "I-" + label[2:]
+                            label_id = LABEL2ID.get(label, LABEL2ID["O"])
+                            label_ids.append(label_id)
                     else:
                         label_ids.append(-100)
 
